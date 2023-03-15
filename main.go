@@ -152,6 +152,7 @@ func loadConfig(path string) (Config, error) {
 	var err error
 
 	debugLogger.Printf("load config: %v\n", path)
+	traceLogger.Printf("config loaded!")
 
 	file, err := ioutil.ReadFile(path)
 	if err != nil {
@@ -211,6 +212,10 @@ func getDataFromAWS(a *settings) (*[]types.ResultByTime, error) {
 
 	cfg, err := config.LoadDefaultConfig(ctx)
 
+    if err != nil {
+		return nil, fmt.Errorf("failed to load configuration, %v", err)
+	}
+    
 	ce := costexplorer.NewFromConfig(cfg)
 
 	caui := costexplorer.GetCostAndUsageInput{
