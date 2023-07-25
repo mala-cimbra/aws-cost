@@ -4,7 +4,7 @@ go 1.20
 
 require (
 	github.com/aws/aws-sdk-go-v2/config v1.18.28
-	github.com/aws/aws-sdk-go-v2/service/costexplorer v1.25.10
+	github.com/aws/aws-sdk-go-v2/service/costexplorer v1.26.0
 	github.com/influxdata/influxdb-client-go/v2 v2.12.3
 )
 
